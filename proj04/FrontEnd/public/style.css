@@ -1,0 +1,48 @@
+.inicio {
+    text-align: center;
+    font-size: 2em;
+}
+
+div.ModeloTitulo {
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDsou-9Yj0s2NTQ1pGx4zvMQj12BW1NUvgLA&s");
+    background-position: center;
+    background-size: cover;
+    padding: 32px;
+}
+
+div.TituloNome {
+    color: #666;
+    font-size: 32pt;
+    margin-top: 160px;
+    text-align: center;
+}
+
+div.ModeloCampo {
+    background: white;
+    padding: 32px;
+    margin: 32px 0;
+
+}
+div.CampoInterno {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: center;
+}
+
+div.ModeloConteudo {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+}
+
+div.ConteudoTitulo {
+     margin: 16px 0;
+    text-align: center;
+}
+
+div.ConteudoInfo {
+    color: #555;
+    font-size: 12pt;
+    text-align: center;
+}

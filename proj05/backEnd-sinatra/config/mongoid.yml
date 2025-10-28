@@ -1,0 +1,4 @@
+devolepment:
+  clients:
+    default:
+      uri: "mongodb+srv://ianalmddiass_db_user:cleber13@cluster0.jrfy88w.mongodb.net/?appName=Cluster0"

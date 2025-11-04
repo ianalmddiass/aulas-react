@@ -2,11 +2,7 @@ require "sinatra"
 require "mongoid"
 require "json"
 
-Mongoid.load! (
-    File.join(
-        File.dirname(__FILE__), "config", "mongoid.yml"
-    )
-)
+Mongoid.load!('config/mongoid.yml', :development)
 
 class Usuario 
     include Mongoid::Document
@@ -27,17 +23,46 @@ end
 
 get "/:id" do
     @user = Usuario.find_by(_id: params[:id])
-    halt 404, { message: "User not found" }.to_json unless item
+    halt 404, { message: "User not found" }.to_json unless @user
     @user.to_json
 end
 
 post "/" do
     # data = JSON.parse(request.body.read)
-    data = request.body.read
-    puts "--->> #{data}"
-    @user = Usuario.create(data)
-    puts "--->> #{@user}"
-    
-    status 201
-    @user.to_json
+    data = JSON.parse request.body.read
+    @user = Usuario.new(data)
+    if @user.save!
+        status 201
+        @user.to_json
+    else
+        status 400
+        { message: 'Dados inválidos' }.to_json
+    end
+end
+
+put "/:id" do
+    user = Usuario.find_by _id: params[:id]
+    if user
+        data = JSON.parse request.body.read
+        if user.update data
+            user.to_json
+        else
+            status 422
+            {error: user.errors.full_messages}.to_json
+        end
+    else
+        status 404
+        {error: "user not found"}.to_json
+    end
+end
+
+delete "/:id" do
+    user = Usuario.find_by _id: params[:id]
+    if user
+        user.destroy
+        status 204
+    else
+        status 404
+        {error: "user not found"}.to_json
+    end
 end

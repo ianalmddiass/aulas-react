@@ -1,8 +1,14 @@
 require "sinatra"
+require "sinatra/cors"
 require "mongoid"
 require "json"
 
 Mongoid.load!('config/mongoid.yml', :development)
+
+set :allow_origin, '*'
+set :allow_methods, 'GET, POST, PUT, DELETE, HEAD'
+set :allow_headers, 'content-type, if-modified-since'
+set :expose_headers, 'location, link'
 
 class Usuario 
     include Mongoid::Document

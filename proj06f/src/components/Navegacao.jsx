@@ -16,9 +16,11 @@ const ModeloBotoes = styled.div`
     justify-content: center;
 `
 
-const Navegacao = () => {
+const Navegacao = (props) => {
   return <Modelo>
-        <ModeloTitulo> {props.titulo} </ModeloTitulo>
+        <ModeloTitulo> { props.titulo } </ModeloTitulo>
+
+        <ModeloBotoes> { props.children } </ModeloBotoes>
   </Modelo>
 }
 

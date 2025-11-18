@@ -9,7 +9,10 @@ const ProdutosExemplo = [
             "https://cdn.awsli.com.br/600x1000/2538/2538595/produto/211451064/bicicleta-bmx-bull-aro-20-aco-hi-ten-pedivela-3-pecas-central-mid-preto-65b0b17d.jpg",
             "https://cdn.awsli.com.br/2500x2500/2538/2538595/produto/211451065/bicicleta-bmx-bull-aro-20-aco-hi-ten-pedivela-3-pecas-central-mid-camaleao-61774ad1.jpg",
             "https://cdn.awsli.com.br/400x400/2538/2538595/produto/348281963/bike_bull_azul-tiwmgy5e6n.jpg",
-        ]
+            "https://cdn.awsli.com.br/600x1000/2538/2538595/produto/211451064/bicicleta-bmx-bull-aro-20-aco-hi-ten-pedivela-3-pecas-central-mid-preto-65b0b17d.jpg",
+            "https://img.olx.com.br/images/31/310508930004597.jpg"
+        ],
+        promocao: true,
     },
 ]
 

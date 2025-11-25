@@ -28,7 +28,7 @@ export default function Produto(props) {
                 <a href="/carrinho"> Carrinho </a>
             </Navegacao>
             <Exibidor Produto={
-                ProdutosExemplo.find((produto =>produto.codigo === codigo))
+                ProdutosExemplo.find((produto =>produto.codigo == codigo))
             }/>
         </>
         :

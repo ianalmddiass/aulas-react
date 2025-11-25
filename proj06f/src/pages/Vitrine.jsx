@@ -7,7 +7,7 @@ const Vitrine = () => {
   return <div>
       <Navegacao>
         <a href='/'>Inicio</a>
-        <a href="/produto/1234"> Promoção </a>
+        <a href="/promocao"> Promoção </a>
         <a href="/carrinho"> Carrinho </a>
       </Navegacao>
       <Principal Produtos={ProdutosExemplo}/>

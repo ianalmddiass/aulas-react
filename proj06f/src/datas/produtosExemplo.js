@@ -14,6 +14,21 @@ const ProdutosExemplo = [
         ],
         promocao: true,
     },
+    {
+        codigo: "2",
+        marca: "Portal Wheeling",
+        modelo: "Perifa Aro 26",
+        preco: 3099.99,
+        descricao: "O quadro PERIFA foi desenvolvido pelo Portal Wheeling em parceria com os melhores pilotos de Wheeling Bike do Brasil, entre eles, Hudson Xavier. O quadro possui um ótimo grafismo (com desenhos que fazem referência à modalidade), tubos com ótimo design e muita resistência, além de formatos desenhados minuciosamente para facilitar as manobras em que o piloto se apoia neles (como o RL sem as mãos, por exemplo).A bicicleta PERIFA do Portal Wheeling é própria para a modalidade Wheeling e possui uma relação leve o suficiente para empinar, mas que também possibilita passeios. As peças permitem a execução de qualquer manobra da modalidade. ",
+        imagens: [
+            "https://static.portalwheeling.com.br/public/portalwheeling/imagens/produtos/media/bicicleta-aro-26-portal-wheeling-perifa-2-0-14-5-azul-e-preto-com-freio-hidraulico-shimano-68caef5675b63.jpg",
+            "https://static.portalwheeling.com.br/public/portalwheeling/imagens/produtos/media/bicicleta-aro-26-portal-wheeling-perifa-2-0-14-5-azul-e-preto-com-freio-hidraulico-shimano-68cc440320872.jpg",
+            "https://static.portalwheeling.com.br/public/portalwheeling/imagens/produtos/media/bicicleta-aro-26-portal-wheeling-perifa-2-0-14-5-azul-e-preto-com-freio-hidraulico-shimano-68cc43ffb0ed2.jpg",
+            "https://static.portalwheeling.com.br/public/portalwheeling/imagens/produtos/bicicleta-aro-26-portal-wheeling-perifa-2-0-14-5-azul-e-preto-com-freio-hidraulico-shimano-68cc43ef460b2.jpg",
+            "https://static.portalwheeling.com.br/public/portalwheeling/imagens/produtos/bicicleta-aro-26-portal-wheeling-perifa-2-0-14-5-azul-e-preto-com-freio-hidraulico-shimano-68cc43e1ca030.jpg"
+        ],
+        promocao: false,
+    }
 ]
 
 export default ProdutosExemplo

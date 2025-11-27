@@ -8,9 +8,8 @@ const ProdutosExemplo = [
         imagens: [
             "https://cdn.awsli.com.br/600x1000/2538/2538595/produto/211451064/bicicleta-bmx-bull-aro-20-aco-hi-ten-pedivela-3-pecas-central-mid-preto-65b0b17d.jpg",
             "https://cdn.awsli.com.br/2500x2500/2538/2538595/produto/211451065/bicicleta-bmx-bull-aro-20-aco-hi-ten-pedivela-3-pecas-central-mid-camaleao-61774ad1.jpg",
-            "https://cdn.awsli.com.br/400x400/2538/2538595/produto/348281963/bike_bull_azul-tiwmgy5e6n.jpg",
-            "https://cdn.awsli.com.br/600x1000/2538/2538595/produto/211451064/bicicleta-bmx-bull-aro-20-aco-hi-ten-pedivela-3-pecas-central-mid-preto-65b0b17d.jpg",
-            "https://img.olx.com.br/images/31/310508930004597.jpg"
+            "https://cdn.awsli.com.br/400x400/2538/2538595/produto/348281963/bike_bull_azul-tiwmgy5e6n.jpg"
+            
         ],
         promocao: true,
     },
@@ -24,8 +23,7 @@ const ProdutosExemplo = [
             "https://static.portalwheeling.com.br/public/portalwheeling/imagens/produtos/media/bicicleta-aro-26-portal-wheeling-perifa-2-0-14-5-azul-e-preto-com-freio-hidraulico-shimano-68caef5675b63.jpg",
             "https://static.portalwheeling.com.br/public/portalwheeling/imagens/produtos/media/bicicleta-aro-26-portal-wheeling-perifa-2-0-14-5-azul-e-preto-com-freio-hidraulico-shimano-68cc440320872.jpg",
             "https://static.portalwheeling.com.br/public/portalwheeling/imagens/produtos/media/bicicleta-aro-26-portal-wheeling-perifa-2-0-14-5-azul-e-preto-com-freio-hidraulico-shimano-68cc43ffb0ed2.jpg",
-            "https://static.portalwheeling.com.br/public/portalwheeling/imagens/produtos/bicicleta-aro-26-portal-wheeling-perifa-2-0-14-5-azul-e-preto-com-freio-hidraulico-shimano-68cc43ef460b2.jpg",
-            "https://static.portalwheeling.com.br/public/portalwheeling/imagens/produtos/bicicleta-aro-26-portal-wheeling-perifa-2-0-14-5-azul-e-preto-com-freio-hidraulico-shimano-68cc43e1ca030.jpg"
+            
         ],
         promocao: false,
     }

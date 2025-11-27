@@ -3,6 +3,7 @@ import {BrowserRouter, Routes, Route } from 'react-router-dom'
 import Vitrine from "./pages/Vitrine"
 import Promocao from "./pages/Promocao"
 import Produto from "./pages/Produto"
+import Carrinho from "./pages/carrinho"
 
 const Rotas = () => {
   return <BrowserRouter>
@@ -10,7 +11,8 @@ const Rotas = () => {
             <Route index path="/" element={<Vitrine/>} />
             <Route path="/produto/:codigo" element={<Produto/>}/>
             <Route path="/promocao" element={<Promocao/>}/>
-        </Routes>
+            <Route path="/carrinho" element={<Carrinho/>}/>
+         </Routes>
   </BrowserRouter>
 }
 

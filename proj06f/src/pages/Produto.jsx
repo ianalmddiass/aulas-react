@@ -19,23 +19,16 @@ const ModeloDados = styled.div`
 `
 
 export default function Produto(props) {
-    const { codigo } = useParams()
-    return Object.keys(props.produto).length > 0 ? 
-        <>
+    const { codigo } = useParams() 
+        return <>
             <Navegacao titulo="VITRINE">
                 <a href="/"> Inicio </a>
                 <a href="/promocao"> Promoção </a>
                 <a href="/carrinho"> Carrinho </a>
             </Navegacao>
-            <Exibidor Produto={
-                ProdutosExemplo.find((produto =>produto.codigo == codigo))
+            <Exibidor produto={
+                ProdutosExemplo.find(produto =>produto.codigo === codigo)
             }/>
-        </>
-        :
-        <>
-            <Modelo>
-                <ModeloDados> Produto não encontrado! </ModeloDados>
-            </Modelo>
         </>
     
 }

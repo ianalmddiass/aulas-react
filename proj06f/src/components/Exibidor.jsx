@@ -1,9 +1,9 @@
 import React from "react";
 import styled from "styled-components";
+import SalvarCarrinho from "../functions/SalvarCarrinho";
 
 const Modelo = styled.div`
     background: #fff;
-    display: flex;
     margin: 32px 0;
     overflow: hidden;
 `
@@ -11,16 +11,15 @@ const Modelo = styled.div`
 const ModeloImagens = styled.div`
     display: flex;
     overflow-x: scroll;
-    max-width: 480px;
+    min-width: 500px;
 `
 
 const ModeloDados = styled.div`
-    display: flex;
-    flex-direction: column;
     gap: 16px;
     padding: 16px;
 `
 export default function Exibidor(props) {
+    console.log(props.produto)
     return <Modelo>
         <ModeloImagens>
                 <img 
@@ -41,8 +40,10 @@ export default function Exibidor(props) {
             <div> {props.produto.modelo} </div>
             <div> ${props.produto.preco} </div>
             <div> {props.produto.descricao} </div>
-            <button> Adicionar ao Carrinho </button>
+            <button onClick={()=> SalvarCarrinho(props.produto.codigo)}>
+                Adicionar ao Carrinho 
+            </button>
         </ModeloDados>
-
+        
     </Modelo>
 }

@@ -8,12 +8,12 @@ export default function Carrinho() {
     const [ carrinho, definirCarrinho ] = useState([])
     const [ preco, definirPreco] = useState(0)
 
-    useEffect(function() {
+    useEffect(() => {
         const resultado = ObterCarrinho()
         definirCarrinho(resultado)
     }, [])
 
-    useEffect(function(){
+    useEffect(() => {
         var total = 0
         
         carrinho.map(function(codigo){
@@ -46,7 +46,7 @@ export default function Carrinho() {
                 </thead>
                 <tbody>
                     {
-                        carrinho.map(function(codigo, indice) {
+                        carrinho.map((codigo, indice) => {
                             for( const produto of ProdutosExemplo) {
                                 if (produto.codigo === codigo)
                                     return<tr key={indice}>

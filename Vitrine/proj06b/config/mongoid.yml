@@ -1,0 +1,7 @@
+development:
+  clients:
+    default:
+      database: proj06
+      hosts:
+        - "localhost:27017"
+

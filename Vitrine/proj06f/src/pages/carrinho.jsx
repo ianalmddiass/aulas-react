@@ -3,6 +3,7 @@ import Navegacao from "../components/Navegacao";
 import ProdutosExemplo from "../datas/produtosExemplo";
 import Janela from "../components/Janela";
 import ObterCarrinho from "../functions/ObterCarrinho";
+import LimparCarrinho from "../functions/LimparCarrinho";
 
 export default function Carrinho() {
     const [ carrinho, definirCarrinho ] = useState([])
@@ -60,6 +61,7 @@ export default function Carrinho() {
     
                 </tbody>
             </table>
+            <button onClick={() => {LimparCarrinho()}}>limpar carrinho</button>
         </Janela>
     </>
 }

@@ -45,11 +45,11 @@ get "/:id" do
 end
 
 post "/" do
-    data = JSON.parse request.body.read
-
+    data = JSON.parse(request.body.read, symbolize_names: true)
+    
     produto = Product.new(data)
-
-    if produto.save!
+    
+    if produto.save
         produto.to_json
     else
         status 400

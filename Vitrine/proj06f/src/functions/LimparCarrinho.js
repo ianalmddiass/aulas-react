@@ -4,7 +4,7 @@ import Carrinho from '../pages/carrinho';
 const LimparCarrinho = () => {
     localStorage.removeItem('carrinho');
     return (
-        console.log("carrinho esvaziado")
+        console.log("carrinho esvaziado") 
     )
 }
 

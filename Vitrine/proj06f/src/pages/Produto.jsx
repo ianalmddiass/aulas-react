@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import Navegacao from "../components/Navegacao" 
 import Exibidor from "../components/Exibidor";
 import ProdutosExemplo from "../datas/produtosExemplo";
@@ -19,16 +19,36 @@ const ModeloDados = styled.div`
 `
 
 export default function Produto(props) {
-    const { codigo } = useParams() 
-        return <>
-            <Navegacao titulo="VITRINE">
-                <a href="/"> Inicio </a>
-                <a href="/promocao"> Promoção </a>
-                <a href="/carrinho"> Carrinho </a>
-            </Navegacao>
-            <Exibidor produto={
-                ProdutosExemplo.find(produto =>produto.codigo === codigo)
-            }/>
-        </>
+    const { params } = useParams()
+
+    const [ produtosEx, setProdutosEx ] = useState([])
+    
+    useEffect(() => {
+        fetch("http://localhost:4567/")
+        .then(Response => Response.json())
+        .then((data) => {
+            setProdutosEx(data)
+            console.log(data)
+            // console.log(ProdutosExemplo)
+        })
+        .catch(error => console.error(error));
+
+    }, [])
+
+    return <>
+        <Navegacao titulo="VITRINE">
+            <a href="/"> Inicio </a>
+            <a href="/promocao"> Promoção </a>
+            <a href="/carrinho"> Carrinho </a>
+        </Navegacao>
+        {
+            produtosEx.map(function(produto,indice){
+                if (produto._id === params)
+                    console.log(produto)
+                    return <Exibidor                     
+                        produto={produto}/>
+                })
+        }
+    </>
     
 }

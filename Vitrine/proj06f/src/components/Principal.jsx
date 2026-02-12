@@ -35,7 +35,7 @@ export default function Principal(props) {
                 return <Produto key={indice}>
                     <a href={ "/produto/" + produto._id }>
                         <ProdutoImagem
-                            src={produto.images[0]}
+                            src={produto.images[0]['url']}
                         />
                         <ProdutoDados>
                             <div> {produto.modelo} </div>

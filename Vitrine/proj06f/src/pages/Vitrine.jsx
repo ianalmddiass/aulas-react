@@ -15,7 +15,7 @@ const Vitrine = () => {
       .then((data) => {
         setProdutosEx(data)
         console.log(data)
-        console.log(ProdutosExemplo)
+        // console.log(ProdutosExemplo)
       })
       .catch(error => console.error(error));
 
@@ -27,6 +27,7 @@ const Vitrine = () => {
         <a href="/promocao"> Promoção </a>
         <a href="/carrinho"> Carrinho </a>
       </Navegacao>
+      {console.log(produtosEx)}
       <Principal Produtos={produtosEx}/>
   </div>
 }

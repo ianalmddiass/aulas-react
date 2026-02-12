@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import SalvarCarrinho from "../functions/SalvarCarrinho";
+import Produtos from "../functions/FetchProdutos";
 
 const Modelo = styled.div`
     background: #fff;
@@ -19,19 +20,18 @@ const ModeloDados = styled.div`
     padding: 16px;
 `
 export default function Exibidor(props) {
-    console.log(props.produto)
     return <Modelo>
         <ModeloImagens>
                 <img 
-                    src={ props.produto.images[0] }
+                    src={ props.produto.images[0]['url'] }
                     height={ 450 }
                 />
                 <img 
-                    src={ props.produto.images[1] }
+                    src={ props.produto.images[1]['url'] }
                     height={ 450 }
                 />
                 <img 
-                    src={ props.produto.images[2] }
+                    src={ props.produto.images[2]['url'] }
                     height={ 450 }
                 />
         </ModeloImagens>

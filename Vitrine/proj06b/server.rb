@@ -39,7 +39,7 @@ get "/" do
 end
 
 get "/:id" do
-    @Produto = Product.find_by(_id: params[:id])
+    @Produto = Product.find params[:id]
     halt 404, { message: "Product not found" }.to_json unless @Produto
     @Produto.to_json
 end
@@ -58,7 +58,7 @@ post "/" do
 end
 
 put "/:id" do
-    Produto = Product.find_by _id: params[:id]
+    Produto = Product.find params[:id]
     if Produto
         data = JSON.parse request.body.read
         if Produto.update data
@@ -74,7 +74,7 @@ put "/:id" do
 end
 
 delete "/:id" do
-    Produto = Product.find_by _id: params[:id]
+    Produto = Product.find params[:id]
     if Produto
         Produto.destroy
         status 204

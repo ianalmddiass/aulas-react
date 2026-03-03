@@ -33,18 +33,22 @@ before do
     content_type :json 
 end
 
-get "/" do
+get '/' do
+    { message: "Acessou a página" }.to_json
+end
+
+get "/products" do
     @Produtos = Product.all
     @Produtos.to_json
 end
 
-get "/:id" do
+get "/products/:id" do
     @Produto = Product.find params[:id]
     halt 404, { message: "Product not found" }.to_json unless @Produto
     @Produto.to_json
 end
 
-post "/" do
+post "/products" do
     data = JSON.parse(request.body.read, symbolize_names: true)
     
     produto = Product.new(data)
@@ -57,7 +61,7 @@ post "/" do
     end
 end
 
-put "/:id" do
+put "/products/:id" do
     Produto = Product.find params[:id]
     if Produto
         data = JSON.parse request.body.read
@@ -73,7 +77,7 @@ put "/:id" do
     end
 end
 
-delete "/:id" do
+delete "/products/:id" do
     Produto = Product.find params[:id]
     if Produto
         Produto.destroy

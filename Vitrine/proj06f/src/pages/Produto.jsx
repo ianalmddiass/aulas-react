@@ -52,6 +52,7 @@ export default function Produto() {
             <a href="/carrinho"> Carrinho </a>
         </Navegacao>
         { produto.marca }
+        {/* { produto } */}
         <Exibidor produto={produto} />
     </>
     

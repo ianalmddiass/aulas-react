@@ -21,26 +21,25 @@ const ModeloDados = styled.div`
 `
 export default function Exibidor(props) {
 
-    console.log(props)
-    console.log(props['produto'])
     console.log(props.produto)
+
     return <Modelo>
         <ModeloImagens>
-                <img 
-                    src={ props.produto.images[0]['url'] }
-                    alt="#"
-                    height={ 450 }
-                />
-                <img 
-                    src={ props.produto.images[1]['url'] }
-                    alt="#"
-                    height={ 450 }
-                />
-                <img 
-                    src={ props.produto.images[2]['url'] }
-                    alt="#"
-                    height={ 450 }
-                />
+            <img 
+                src={ props.produto.images[0]['url'].toString() }
+                alt="#"
+                height={ 450 }
+            />
+            <img 
+                src={ props.produto.images[1]['url'].toString() }
+                alt="#"
+                height={ 450 }
+            />
+            <img 
+                src={ props.produto.images[2]['url'].toString() }
+                alt="#"
+                height={ 450 }
+            />
         </ModeloImagens>
         <ModeloDados>
             <div> {props.produto.marca} </div>
@@ -51,6 +50,5 @@ export default function Exibidor(props) {
                 Adicionar ao Carrinho 
             </button>
         </ModeloDados>
-        
     </Modelo>
 }

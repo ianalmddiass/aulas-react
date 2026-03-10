@@ -3,6 +3,7 @@ import { BrowserRouter } from 'react-router-dom'
 import { Routes, Route } from 'react-router'
 
 import Vitrine from './pages/Vitrine';
+import Produto from './pages/Produto';
 
 function App() {
 

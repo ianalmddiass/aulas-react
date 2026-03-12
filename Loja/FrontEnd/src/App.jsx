@@ -4,6 +4,8 @@ import { Routes, Route } from 'react-router'
 
 import Vitrine from './pages/Vitrine';
 import Produto from './pages/Produto';
+import Promocao from './pages/Promocao';
+import Carrinho from './pages/carrinho';
 
 function App() {
 
@@ -12,8 +14,8 @@ function App() {
         <Routes>
           <Route index path="/" element={<Vitrine />} />
           <Route path="/produto/:id" element={<Produto />} />
-          {/* <Route path="/promocao" element={<Promocao />} /> */}
-          {/* <Route path="/carrinho" element={<Carrinho />} /> */}
+          <Route path="/promocao" element={<Promocao />} />
+          <Route path="/carrinho" element={<Carrinho />} />
         </Routes>
       </BrowserRouter>
   )

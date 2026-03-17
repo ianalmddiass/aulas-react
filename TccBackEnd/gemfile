@@ -1,0 +1,7 @@
+source "http://rubygems.org"
+
+gem "sinatra"
+gem "rack-cors"
+gem "json"
+gem "puma"
+gem "mongoid"

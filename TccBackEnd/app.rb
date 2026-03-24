@@ -13,6 +13,7 @@ class Post
     include Mongoid::Document
     field :title, type: String
     field :content, type: String
+    field :sport, type: String
 end
 
 before do
@@ -24,8 +25,16 @@ get "/" do
     {message: "bem vindo!01"}.to_json 
 end
 
+# o url filtrando  funciona com "?q=x" onde o x é o esporte selecionado
+
 get '/posts' do
-    @posts = Post.all
+    @q = params[:q]
+    puts ">>> #{@q}"
+    if @q
+        @posts = Post.where( sport: @q )
+    else
+        @posts = Post.all
+    end
     @posts.to_json
 end
 
@@ -34,6 +43,12 @@ get "/posts/:id" do
     halt 404, { message: "post not found"}.to_json unless @post
     @post.to_json 
 end
+
+# get "/posts/:q" do
+#     @post = Posts.where( sport: params[:q] )
+#     halt 404, { message: "posts not found"}.to_json unless @post
+#     @post.to_json 
+# end
 
 post "/posts" do
     data = JSON.parse(request.body.read, symbolize_names: true)

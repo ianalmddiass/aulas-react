@@ -34,6 +34,8 @@ GEM
       activemodel (>= 5.1, < 8.2, != 7.0.0)
       concurrent-ruby (>= 1.0.5, < 2.0)
       mongo (>= 2.18.0, < 3.0.0)
+    mongoid_token (1.0.0)
+      activesupport (>= 3.0)
     mustermann (3.0.4)
       ruby2_keywords (~> 0.0.1)
     nio4r (2.7.5)
@@ -69,6 +71,7 @@ PLATFORMS
 DEPENDENCIES
   json
   mongoid
+  mongoid_token
   puma
   rack-cors
   sinatra

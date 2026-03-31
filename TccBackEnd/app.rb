@@ -4,7 +4,7 @@ require "mongoid"
 require "json"
 require_relative './models/Post'
 require_relative './models/User'
-require_relative './models/Access'
+require_relative './models/Session'
 
 use Rack::Cors do
     allow do
@@ -22,13 +22,23 @@ before do
     content_type :json
 end
 
+# helpers do
+#     def protected!
+#         token = request.env['HTTP_AUTHORIZATION']&.split(' ')&.last
+#         @current_user = User.where(access_token: token).first 
+#         if token
+#             halt 401, "not authorized" unless @current_user            
+#         end
+#     end  
+# end
+
 
 get "/" do
-    {message: "bem vindo!01"}.to_json 
+    {message: "bem vindo!"}.to_json 
 end
 
 
-# o url filtrando  funciona com "?q=x" onde o x é o paramêtro de pesquisa
+# o url filtrando  funciona com "?q=x" onde o x é o parametro de pesquisa
 get '/posts' do
     @q = params[:q]
     puts ">>> #{@q}"
@@ -50,12 +60,7 @@ get "/posts/:id" do
     @post.to_json 
 end
 
-# get "/posts/:q" do
-#     @post = Posts.where( sport: params[:q] )
-#     halt 404, { message: "posts not found"}.to_json unless @post
-#     @post.to_json 
-# end
-
+# falta t autenticação
 post "/posts" do
     data = JSON.parse(request.body.read, symbolize_names: true)
 
@@ -70,6 +75,7 @@ post "/posts" do
     end
 end
 
+# falta autenticação
 delete "/posts/:id" do
     post = Post.find params[:id]
     if post
@@ -82,9 +88,7 @@ end
 
 
 post "/users" do
-    puts ">>> 1) #{request.body.read}"
-    puts ">>> 2) #{params}"
-    data = JSON.parse(request.body.read, symbolize_names: true)
+    data = JSON.parse(request.body.read)
     @user = User.new(data)
     
     if @user.save
@@ -94,14 +98,34 @@ post "/users" do
         {message: "dados inválidos"}.to_json
     end
 end
-        
-get "/users" do
-    @q = params[:q]
+
+post '/session' do
+    data = JSON.parse(request.body.read)
+    @user = User.where(username: data['username'])
+    @session = Session.where(user_id: @user._id)
     
-    if @q
-        @users = User.where(username: /#{@q}/)
+    if @user
+        if data['password'] == @user.password
+            if @session
+                status 422
+                {message: "Usuário já conectado"}.to_json
+            else
+                @session = Session.new(data)
+                @session.generate_token!
+                @session.save
+                status 201
+                { access_token: @session.access_token, user_id: @session.user_id }.to_json
+            end
+        else
+            status 422
+            { message: "dados inválidos" }.to_json
+        end
     else
-        @users = User.all
+        status 422
+        { message: "dados inválidos" }.to_json
     end
-    @users.to_json
+end
+
+delete '/session' do
+      
 end

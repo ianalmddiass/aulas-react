@@ -1,0 +1,4 @@
+para criar ou deletar um post, deve-se passar o token de acesso no header com uma key chamada "Authorization";
+é importante guardar o token de acesso para implementar no font-end(ainda não sei como irei fazer isso);
+o servidor está completo(ao menos por em quanto, está aberto a mudanças)
+tenho que descobrir como settar uma conta como admin quando usar o método GET para criar ela, para criar a conta que usei de testes eu editei diretamente no mongodb

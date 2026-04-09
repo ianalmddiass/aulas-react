@@ -1,18 +1,23 @@
 require 'mongoid'
+require 'securerandom'
 
 class Session
-    include Mongoid::Document
+  include Mongoid::Document
+  include Mongoid::Timestamps
 
-    field :user_id, type: String
-    field :access_token, type: String
-    field :expires_at, type: Time
+  field :access_token, type: String
+  field :expires_at, type: Time
 
-    def expired?
-        Time.now > self.expires_at
-    end
+  belongs_to :user
 
-    def generate_token!
-        nrand = Random.new
-        self.access_token = "#{user_id}#{Time.now.strftime('%d%m%Y%S%M%H')}#{nrand.rand(10000)}"
-    end
+  index({ access_token: 1 }, { unique: true })
+
+  def generate_token!
+    self.access_token = SecureRandom.hex(32)
+    self.expires_at = Time.now + 60 * 60 * 24
+  end
+
+  def expired?
+    Time.now > self.expires_at
+  end
 end

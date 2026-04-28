@@ -1,11 +1,15 @@
 const API_URL = "http://127.0.0.1:4567";
-
+const token = localStorage.getItem("token");
 let allPosts = [];
 
 // fetch posts
 async function fetchPosts() {
   try {
-    const res = await fetch(API_URL + "/posts");
+    const res = await fetch(API_URL + "/posts", {
+      headers: {
+        "Authorization": `Bearer ${token}`
+  }
+    });
 
     if (!res.ok) {
       throw new Error("Erro na resposta da API");

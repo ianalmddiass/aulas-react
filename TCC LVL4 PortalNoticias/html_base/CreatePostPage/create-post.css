@@ -1,0 +1,43 @@
+body {
+  margin: 0;
+  font-family: Arial;
+  background: #f4f4f4;
+}
+
+.topnav {
+  background: #1a1a1a;
+  color: white;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.container {
+  max-width: 600px;
+  margin: 2rem auto;
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+}
+
+input, textarea {
+  width: 100%;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+}
+
+textarea {
+  height: 150px;
+}
+
+button {
+  padding: 0.6rem 1rem;
+  background: #ff4500;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+#msg {
+  margin-top: 1rem;
+}

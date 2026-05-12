@@ -43,7 +43,7 @@ body {
 /* INPUTS */
 input, textarea {
   width: 100%;
-  margin-bottom: 1rem;
+  margin-bottom: 0.2rem;
   padding: 0.5rem;
 }
 
@@ -54,6 +54,7 @@ textarea {
 /* BUTTON */
 button {
   padding: 0.5rem 1rem;
+  margin-top: 0.2rem;
   background: #ff4500;
   color: white;
   border: none;
@@ -79,3 +80,4 @@ button {
   margin-top: 1rem;
   line-height: 1.5;
 }
+

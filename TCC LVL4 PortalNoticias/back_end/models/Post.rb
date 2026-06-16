@@ -6,6 +6,8 @@ class Post
 
   field :title, type: String
   field :content, type: String
+  field :subtitle, type: String
+  field :image_url, type: String
   field :sport, type: String
 
   belongs_to :user

@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import axios from 'axios'
-
+import Header from '../components/Header'
 import './css/Post.css'
 
 function Post() {
@@ -35,23 +35,28 @@ function Post() {
   if (!post) {
     return <h2>Post não encontrado.</h2>
   }
-
+  let keys = JSON.stringify(post);
   return (
-    <main className="post-page">
-      <img
-        src={post.image_url}
-        alt={post.title}
-        className="post-image"
-      />
+    <>
+      <Header />
+      <p> { keys }</p>
+        <main className="post-page">
+        <h1>{post.title}</h1>
 
-      <h1>{post.title}</h1>
+        <img
+          src={post.image_url}
+          alt={post.title}
+          className="post-image"
+          />
 
-      <h3>{post.subtitle}</h3>
 
-      <div className="post-content">
-        {post.content}
-      </div>
-    </main>
+        <h3>{post.subtitle}</h3>
+
+        <div className="post-content">
+          {post.content}
+        </div>
+      </main>
+    </>
   )
 }
 

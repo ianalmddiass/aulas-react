@@ -8,6 +8,7 @@ class UsersController < BaseController
 
     user = User.new(username: data['username'])
     user.password = data['password']
+    user.admin = data['admin']
 
     if user.save
       user.to_json

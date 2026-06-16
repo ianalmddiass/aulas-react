@@ -33,7 +33,9 @@ class PostsController < BaseController
 
     post = Post.new(
       title: data[:title],
+      subtitle: data[:subtitle],
       content: data[:content],
+      image_url: data[:image_url],
       sport: data[:sport],
       user: @current_user
     )

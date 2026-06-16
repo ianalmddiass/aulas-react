@@ -10,6 +10,8 @@ function CreatePost() {
   const [subtitle, setSubtitle] = useState('')
   const [imageUrl, setImageUrl] = useState('')
   const [content, setContent] = useState('')
+  const [sport, setSport] = useState('')
+
 
   if (!token) {
     return (
@@ -26,10 +28,11 @@ function CreatePost() {
       await axios.post(
         'http://127.0.0.1:4567/posts',
         {
-          title,
-          subtitle,
-          image_url: imageUrl,
-          content
+          'title':title,
+          'subtitle':subtitle,
+          'image_url': imageUrl,
+          'content':content,
+          'sport':sport
         },
         {
           headers: {
@@ -59,6 +62,13 @@ function CreatePost() {
           placeholder='Título da notícia'
           value={title}
           onChange={(e) => setTitle(e.target.value)}
+        />
+
+        <input
+          type='text'
+          placeholder='esporte da notícia'
+          value={sport}
+          onChange={(e) => setSport(e.target.value)}
         />
 
         <input

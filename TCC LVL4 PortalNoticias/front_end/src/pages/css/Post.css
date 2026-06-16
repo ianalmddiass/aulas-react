@@ -11,15 +11,20 @@
 }
 
 .post-page h1 {
+  background: #cacaca;
+  border-radius: 10px;
   margin-bottom: 15px;
+  text-align: center;
 }
 
 .post-page h3 {
   color: #666;
   margin-bottom: 30px;
+  text-align: center;
 }
 
 .post-content {
   line-height: 1.8;
   font-size: 18px;
+  text-align: center;
 }

@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import axios from 'axios'
 
-import './css/CreatePost.css'
+// import '../public/css/CreatePost.css'
 
 function CreatePost() {
   const token = localStorage.getItem('token')

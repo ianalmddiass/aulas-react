@@ -1,5 +1,5 @@
 import React from 'react'
-import './css/NewsCard.css'
+import '../css/newsCard.css'
 
 function NewsCard(props) {
   return (

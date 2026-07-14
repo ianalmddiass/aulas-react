@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import axios from 'axios'
 import Header from '../components/Header'
-import './css/Post.css'
+import '../css/Post.css'
 
 function Post() {
   const { id } = useParams()

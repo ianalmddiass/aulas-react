@@ -4,6 +4,10 @@ import Home from './pages/Home'
 import Login from './pages/Login'
 import CreatePost from './pages/CreatePost'
 import Post from './pages/Post'
+// import '../public/css/Home.css'
+// import '../public/css/header.css'
+// import '../public/css/newscard.css'
+// import '../public/css/CreatePost.css'
 
 function App() {
   return (

@@ -4,7 +4,7 @@ import axios from 'axios'
 import Header from '../components/Header'
 import NewsCard from '../components/NewsCard'
 
-import './css/home.css'
+import '../css/Home.css'
 
 function Home() {
   const [posts, setPosts] = useState([])

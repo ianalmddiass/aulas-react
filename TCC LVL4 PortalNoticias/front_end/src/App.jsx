@@ -4,6 +4,7 @@ import Home from './pages/Home'
 import Login from './pages/Login'
 import CreatePost from './pages/CreatePost'
 import Post from './pages/Post'
+import AdminHome from './pages/AdminHome'
 // import '../public/css/Home.css'
 // import '../public/css/header.css'
 // import '../public/css/newscard.css'
@@ -17,6 +18,7 @@ function App() {
         <Route path='/login' element={<Login />} /> 
         <Route path='/create-post' element={<CreatePost />} />
         <Route path='/post/:id' element={<Post />} />
+        <Route path='/admin-home' element={<AdminHome />} />
       </Routes>
     </BrowserRouter>
   )

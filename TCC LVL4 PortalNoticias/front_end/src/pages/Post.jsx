@@ -39,7 +39,7 @@ function Post() {
   return (
     <>
       <Header />
-      <p> { keys }</p>
+      {/* <p> { keys }</p> */}
         <main className="post-page">
         <h1>{post.title}</h1>
 

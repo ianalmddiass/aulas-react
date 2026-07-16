@@ -1,7 +1,8 @@
 import { useState } from 'react'
 import axios from 'axios'
+import Header from '../components/Header'
 
-// import '../public/css/CreatePost.css'
+import '../css/CreatePost.css'
 
 function CreatePost() {
   const token = localStorage.getItem('token')
@@ -53,6 +54,10 @@ function CreatePost() {
 
 }}
   return (
+    <>
+      <Header/>
+
+
     <div className='create-post-container'>
       <form className='create-post-form' onSubmit={handleCreatePost}>
         <h2>Criar Postagem</h2>
@@ -94,7 +99,7 @@ function CreatePost() {
         <button type="submit">Publicar</button>
       </form>
     </div>
-  )
+  </>)
   }
 
 export default CreatePost;

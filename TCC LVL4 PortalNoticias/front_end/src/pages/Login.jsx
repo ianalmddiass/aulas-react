@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import axios from 'axios'
-
-// import '../public/css/Login.css'
+import '../css/Login.css'
+import Header from '../components/Header'
 
 function Login() {
   const [username, setUsername] = useState('')
@@ -20,7 +20,7 @@ function Login() {
 
       alert('Login realizado com sucesso!')
 
-      window.location.href = '/create-post'
+      window.location.href = '/admin-home'
     } catch (error) {
       console.error(error)
       alert('Usuário ou senha inválidos')
@@ -28,6 +28,9 @@ function Login() {
   }
 
   return (
+    <>
+    <Header/>
+    
     <div className='login-container'>
       <form className='login-form' onSubmit={handleLogin}>
         <h2>Login Administrativo</h2>
@@ -49,7 +52,7 @@ function Login() {
         <button type='submit'>Entrar</button>
       </form>
     </div>
-  )
+  </>)
 }
 
 export default Login

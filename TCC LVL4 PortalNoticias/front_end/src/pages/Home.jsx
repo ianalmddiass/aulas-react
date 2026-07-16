@@ -42,7 +42,7 @@ function Home() {
                   <NewsCard 
                     key={post._id}
                     title={post.title}
-                    subtitle={post.content}
+                    subtitle={post.subtitle}
                     image={post.image}
                 />
                 </a>

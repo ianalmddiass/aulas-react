@@ -24,8 +24,10 @@ function AdminHome() {
 
         fetchPosts()
     }, [])
+
+
     async function deletePost(id) {
-        const response = await fetch(`http://127.0.0.1:4567/posts/{id}`, {
+        const response = await fetch(`http://127.0.0.1:4567/posts/${id.toString()}`, {
             method: 'DELETE',
         })
     }
@@ -65,7 +67,11 @@ function AdminHome() {
                                             <a href="#">Update</a>
                                         </td>
                                         <td>
-                                            <a onClick={deletePost(post._id)}>Delete</a>
+                                            {/* <button onClick={deletePost(post._id)}>Delete</button> */}
+                                            <form action={`http://127.0.0.1:4567/posts/${post._id}`} method='post'>
+                                                <input type="hidden" name="_method" value="delete" />
+                                                <input type="submit" value="Delete" />
+                                            </form>
                                         </td>
                                     </tr>
                                     // <a href={`/post/${post._id.toString()}`}  >
@@ -82,9 +88,9 @@ function AdminHome() {
                         }
                     </tbody>
                 </table>
+                <br />
 
-
-
+                <a href="/create-post">Criar Post</a>
 
 
                 {/* </section> */}

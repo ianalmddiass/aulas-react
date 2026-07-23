@@ -5,6 +5,8 @@ import Login from './pages/Login'
 import CreatePost from './pages/CreatePost'
 import Post from './pages/Post'
 import AdminHome from './pages/AdminHome'
+import DeletePost from './pages/DeletePost'
+import UpdatePost from './pages/UpdatePost'
 // import '../public/css/Home.css'
 // import '../public/css/header.css'
 // import '../public/css/newscard.css'
@@ -19,6 +21,9 @@ function App() {
         <Route path='/create-post' element={<CreatePost />} />
         <Route path='/post/:id' element={<Post />} />
         <Route path='/admin-home' element={<AdminHome />} />
+        <Route path='/post/:id/delete' element={<DeletePost />} />
+        <Route path='/post/:id/update' element={<UpdatePost />} />
+
       </Routes>
     </BrowserRouter>
   )

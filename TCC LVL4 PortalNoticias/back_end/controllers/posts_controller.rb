@@ -3,6 +3,21 @@ require_relative '../models/Post'
 
 class PostsController < BaseController
 
+  put '/posts/:id' do
+    authenticate!
+    authorize_admin!
+    post = Post.find(params[:id])
+    data = JSON.parse(request.body.read, symbolize_names: true)
+
+    if post.update(data) # Or post.update(data) in newer Mongoid versions
+      status 200
+      post.to_json
+    else
+      status 422
+      { errors: post.errors.full_messages }.to_json
+    end
+  end
+
   get '/posts' do
     q = params[:q]
 
